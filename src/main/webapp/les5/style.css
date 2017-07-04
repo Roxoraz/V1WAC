@@ -1,0 +1,94 @@
+body {
+	background-color: #FFEBCD;
+	color: #000000;
+	margin: 0;
+	padding: 0;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+#frame {
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 49vw 50vw;
+}
+
+#myLocation {
+	grid-row-start: 1;
+	grid-row-end: 1;
+	grid-column-start: 1;
+	grid-column-end: 1;
+}
+
+#weatherInfo {
+	grid-row-start: 1;
+	grid-row-end: 1;
+	grid-column-start: 2;
+	grid-column-end: 2;
+}
+
+#countryList {
+	grid-row-start: 3;
+	grid-row-end: 3;
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+.content {
+	margin: 1vh 1vw;
+}
+
+@media screen and (max-width: 750px) {
+    #myLocation {
+		grid-row-start: 1;
+		grid-row-end: 1;
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	
+	#weatherInfo {
+		grid-row-start: 2;
+		grid-row-end: 2;
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+}
+
+h2 {
+	padding: 1vh 1vw;
+	margin: 1vh 1vw;
+	background-color: #DC381F;
+	color: #000000;
+}
+
+ul {
+	list-style: none;
+	display: block;
+	padding: 0;
+}
+
+ul span {
+	float: right;
+	clear: left;
+}
+
+table {
+	display: block;
+	text-align: left;
+	background-color: #FFCC88;
+	padding: 1vh 1vw;
+	overflow-x: auto;
+}
+
+table .item {
+	cursor: pointer;
+}
+
+table .item:hover {
+	color: FF0000;
+	text-decoration: underline;
+}
+
+table td {
+	min-width: 200px;
+	white-space: nowrap;
+}
