@@ -14,7 +14,7 @@ import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.crypto.MacProvider;
-import nl.hu.v1wac.firstapp.persistance.UserDAO;
+import nl.hu.v1wac.firstapp.persistence.UserDAO;
 
 @Path("/authentication")
 public class AuthenticationResource {

@@ -22,7 +22,7 @@ import javax.ws.rs.core.MediaType;
 import nl.hu.v1wac.firstapp.model.Country;
 import nl.hu.v1wac.firstapp.model.ServiceProvider;
 import nl.hu.v1wac.firstapp.model.WorldService;
-import nl.hu.v1wac.firstapp.persistance.CountryDAO;
+import nl.hu.v1wac.firstapp.persistence.CountryDAO;
 
 @Path("/countries")
 public class WorldResource {

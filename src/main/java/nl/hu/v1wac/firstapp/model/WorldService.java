@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import nl.hu.v1wac.firstapp.persistance.CountryDAO;  
+import nl.hu.v1wac.firstapp.persistence.CountryDAO;  
 
 public class WorldService {
 	CountryDAO cDAO = new CountryDAO();
