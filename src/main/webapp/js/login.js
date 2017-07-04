@@ -1,7 +1,7 @@
 $("#loginButton").click(function(event) {
   var data = $("#loginform").serialize();
 
-  $.post("http://localhost:8080/firstapp/restservices/authentication", data, function(response) {
+  $.post("firstapp/restservices/authentication", data, function(response) {
     window.sessionStorage.setItem("sessionToken", response);
     window.location.replace("manageCountries.html");
 

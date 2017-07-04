@@ -1,10 +1,10 @@
 
 
 
-$(document).ready(function() {
-    loadCountries()
-});
 
+$(document).ready(function() {
+    loadCountries();
+});
 function loadCountries() {
     $.get("http://localhost:8080/firstapp/restservices/countries", (data) => {
 
@@ -18,6 +18,7 @@ function loadCountries() {
     });
 
 }
+
 
 $("#countryCollection").delegate('a', 'click', function() {
     code = $(this).data("code");
@@ -51,7 +52,7 @@ $("#insertButton").click(function(event) {
 var data = $("#inputForm").serialize();
 console.log(data);
     $.ajax({
-        url:"http://localhost:8080/firstapp/restservices/countries",
+        url:"firstapp/restservices/countries",
         method:"POST",
         data: data,
         beforeSend: function (xhr) {
@@ -85,7 +86,7 @@ $("#updateButton").click(function(event) {
         console.log(data);
         console.log("firstapp/restservices/countries/"+$("#codeUpdate").text());
         $.ajax({
-            url: "http://localhost:8080/firstapp/restservices/countries/"+$("#codeUpdate").text(),
+            url: "firstapp/restservices/countries/"+$("#codeUpdate").text(),
             type: "delete",
             data: data,
             beforeSend: function (xhr) {
@@ -94,28 +95,29 @@ $("#updateButton").click(function(event) {
     }
         });
         $("#countryCollection").empty();
+        loadCountries();
+
 });
 
 function searchCountries() {
-    $.get("http://localhost:8080/firstapp/restservices/countries/search/"+$("#searchInput").val(), (data) => {
+    $.get("firstapp/restservices/countries/search/"+$("#searchInput").val(), (data) => {
     $("#countryCollection").empty();
         $(data).each(function(index) {
 
             index += 1;
             $("#countryCollection").append('<a href="#!"  class="collection-item" data-capital="' + this.capital + '" data-code="' + this.countryCode + '" data-lat="' + this.lat + '"  data-lon="' + this.lon + '" data-name="' + this.name + '" id="country' + index + '">' + this.name + '</a>');
             countryid = "#country" + index;
-            loadCountries()
+
         });
     });
 
 }
 $("#searchButton").click(function(event) {
     searchCountries();
-    loadCountries()
 });
 
 function getPop() {
-    $.get("http://localhost:8080/firstapp/restservices/countries/population", (data) => {
+    $.get("firstapp/restservices/countries/population", (data) => {
         $("#countryCollection").empty();
         $(data).each(function(index) {
 
@@ -131,7 +133,7 @@ $("#populationButton").click(function(event) {
     getPop();
 });
 function getSur() {
-    $.get("http://localhost:8080/firstapp/restservices/countries/surface", (data) => {
+    $.get("firstapp/restservices/countries/surface", (data) => {
         $("#countryCollection").empty();
         $(data).each(function(index) {
 
